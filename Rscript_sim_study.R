@@ -28,5 +28,8 @@ results_FFF_BART_sparse <- foreach(icount(N), .packages =c("MASS","BART","MCMCpa
 pe <- 0
 results_FFF_pe_BART_sparse <- foreach(icount(N), .packages =c("MASS","BART","MCMCpack","sn")) %dopar% sim_BART_pe(10000,1000,1000, pe,"BART_FFF_sparse_pe")
 
+#### BART scenario 5
+results_FFF_BART_sparse_death <- foreach(icount(N), .packages =c("MASS","BART","MCMCpack","sn")) %dopar% sim_BART(10000,1000,1000,"FFF_sn_death","BART_FFF_sparse_deaths")
+
 stopCluster(cl)
 registerDoSEQ()
